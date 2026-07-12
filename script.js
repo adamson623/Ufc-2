@@ -248,3 +248,170 @@ function openRealFighterMenu() {
 
 }
 }
+// Система контрактов
+
+const CONTRACTS = {
+
+    amateur: {
+        name: "Любительский контракт",
+        fights: 3,
+        money: 500
+    },
+
+
+    regional: {
+        name: "Региональный контракт",
+        fights: 5,
+        money: 2000
+    },
+
+
+    uae: {
+        name: "UAE Warriors контракт",
+        fights: 3,
+        money: 5000
+    },
+
+
+    aca: {
+        name: "ACA контракт",
+        fights: 3,
+        money: 10000
+    },
+
+
+    pfl: {
+        name: "PFL контракт",
+        fights: 3,
+        money: 25000
+    },
+
+
+    ufc: {
+        name: "UFC контракт",
+        fights: 5,
+        money: 50000
+    }
+
+};
+
+
+
+// Текущий контракт бойца
+
+let fighterContract = {
+
+    league: "NR",
+
+    contract: CONTRACTS.amateur,
+
+    fightsLeft: 3
+
+};
+
+
+
+// Подписание контракта
+
+function signContract(type) {
+
+    fighterContract.contract = CONTRACTS[type];
+
+    fighterContract.fightsLeft =
+    CONTRACTS[type].fights;
+
+
+    fighterContract.league =
+    CONTRACTS[type].name;
+
+
+    console.log(
+        "Новый контракт:",
+        fighterContract.contract.name
+    );
+
+}
+
+// Система контрактов
+
+const CONTRACTS = {
+
+    amateur: {
+        name: "Любительский контракт",
+        fights: 3,
+        money: 500
+    },
+
+
+    regional: {
+        name: "Региональный контракт",
+        fights: 5,
+        money: 2000
+    },
+
+
+    uae: {
+        name: "UAE Warriors контракт",
+        fights: 3,
+        money: 5000
+    },
+
+
+    aca: {
+        name: "ACA контракт",
+        fights: 3,
+        money: 10000
+    },
+
+
+    pfl: {
+        name: "PFL контракт",
+        fights: 3,
+        money: 25000
+    },
+
+
+    ufc: {
+        name: "UFC контракт",
+        fights: 5,
+        money: 50000
+    }
+
+};
+
+
+
+// Текущий контракт бойца
+
+let fighterContract = {
+
+    league: "NR",
+
+    contract: CONTRACTS.amateur,
+
+    fightsLeft: 3
+
+};
+
+
+
+// Подписание контракта
+
+function signContract(type) {
+
+    fighterContract.contract = CONTRACTS[type];
+
+    fighterContract.fightsLeft =
+    CONTRACTS[type].fights;
+
+
+    fighterContract.league =
+    CONTRACTS[type].name;
+
+
+    console.log(
+        "Новый контракт:",
+        fighterContract.contract.name
+    );
+
+}
