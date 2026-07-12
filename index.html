@@ -1,1 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UFC Career</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
+<body>
+
+<div class="container">
+
+<h1>🥊 UFC CAREER</h1>
+
+<h2>Создание бойца</h2>
+
+<input id="name" placeholder="Имя бойца">
+
+<input id="country" placeholder="Страна">
+
+<select id="weight">
+<option>Легкий вес</option>
+<option>Полусредний вес</option>
+<option>Средний вес</option>
+<option>Тяжелый вес</option>
+</select>
+
+<select id="style">
+<option>Бокс</option>
+<option>Кикбоксинг</option>
+<option>Борьба</option>
+<option>BJJ</option>
+<option>Универсал</option>
+</select>
+
+<button onclick="createFighter()">
+Начать карьеру
+</button>
+
+<div id="profile"></div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
