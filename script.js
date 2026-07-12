@@ -4,7 +4,7 @@ function createFighter() {
     let country = document.getElementById("country").value;
     let weight = document.getElementById("weight").value;
     let style = document.getElementById("style").value;
-
+    let difficulty = document.getElementById("difficulty").value;
 
     if(name === "") {
         alert("Введите имя бойца");
