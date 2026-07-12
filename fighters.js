@@ -207,7 +207,113 @@ level: 72
 }
 
 ]
+FEATHERWEIGHT: {
 
+name: "Полулёгкий вес (до 66 кг)",
+
+champion: {
+    name: "Yusuf Karim",
+    country: "🇹🇷 Турция",
+    record: "20-3",
+    style: "Универсал",
+    level: 87
+},
+
+rankings: [
+
+{
+rank: 1,
+name: "Ali Rahman",
+country: "🇦🇿 Азербайджан",
+record: "16-2",
+style: "Бокс",
+level: 82
+},
+
+{
+rank: 2,
+name: "Diego Silva",
+country: "🇧🇷 Бразилия",
+record: "15-3",
+style: "BJJ",
+level: 81
+},
+
+{
+rank: 3,
+name: "Rustam Karimov",
+country: "🇰🇿 Казахстан",
+record: "14-2",
+style: "Борьба",
+level: 80
+},
+
+{
+rank: 4,
+name: "Alex Johnson",
+country: "🇺🇸 США",
+record: "13-3",
+style: "Кикбоксинг",
+level: 79
+},
+
+{
+rank: 5,
+name: "Omar Hassan",
+country: "🇪🇬 Египет",
+record: "12-2",
+style: "Универсал",
+level: 78
+},
+
+{
+rank: 6,
+name: "Kenji Mori",
+country: "🇯🇵 Япония",
+record: "11-3",
+style: "Каратэ",
+level: 76
+},
+
+{
+rank: 7,
+name: "Ivan Petrov",
+country: "🇷🇺 Россия",
+record: "10-2",
+style: "Борьба",
+level: 75
+},
+
+{
+rank: 8,
+name: "Lucas Costa",
+country: "🇵🇹 Португалия",
+record: "10-4",
+style: "Бокс",
+level: 74
+},
+
+{
+rank: 9,
+name: "Sami Khalid",
+country: "🇦🇪 ОАЭ",
+record: "9-3",
+style: "Универсал",
+level: 73
+},
+
+{
+rank: 10,
+name: "Marco Diaz",
+country: "🇪🇸 Испания",
+record: "8-2",
+style: "BJJ",
+level: 72
+}
+
+]
+
+}
 } 
     LIGHTWEIGHT: {
         champion: {}champion: {
