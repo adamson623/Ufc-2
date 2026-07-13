@@ -1,751 +1,840 @@
+// =====================================
+// MMA CAREER GAME
+// UAE WARRIORS -> ACA -> PFL -> UFC
+// =====================================
+
+
 // ===============================
-// БАЗА БОЙЦОВ UFC GAME
+// ИГРОК
+// ===============================
+
+let player = {
+    name:"",
+    country:"",
+    weight:"",
+    style:"",
+    wins:0,
+    losses:0,
+    league:"UAE Warriors",
+    level:60
+};
+
+
+
+// ===============================
+// СОЗДАНИЕ БОЙЦА
+// ===============================
+
+function createFighter(){
+
+    player.name = document.getElementById("name").value;
+    player.country = document.getElementById("country").value;
+    player.weight = document.getElementById("weight").value;
+    player.style = document.getElementById("style").value;
+
+
+    if(player.name === ""){
+        alert("Введите имя бойца");
+        return;
+    }
+
+
+    alert(
+        "Боец создан!\n" +
+        player.name +
+        "\nЛига: UAE Warriors"
+    );
+
+    console.log(player);
+}
+
+
+
+
+// ===============================
+// UAE WARRIORS
+// ВЫДУМАННЫЕ БОЙЦЫ
 // ===============================
 
 
-const UFC = {
+const UAE_WARRIORS = {
+
+
+
+FLYWEIGHT: [
+
+{
+name:"Ахмед Нур",
+country:"ОАЭ",
+style:"Борьба",
+record:"0-0",
+level:60
+},
+
+{
+name:"Иван Крылов",
+country:"Россия",
+style:"Бокс",
+record:"1-0",
+level:61
+},
+
+{
+name:"Кен Сато",
+country:"Япония",
+style:"Каратэ",
+record:"2-1",
+level:62
+}
+
+],
+
+
+
+BANTAMWEIGHT: [
+
+{
+name:"Марат Алиев",
+country:"Азербайджан",
+style:"Борьба",
+record:"0-0",
+level:60
+},
+
+{
+name:"Лукас Рейес",
+country:"Испания",
+style:"Кикбоксинг",
+record:"2-0",
+level:62
+},
+
+{
+name:"Джон Картер",
+country:"США",
+style:"Бокс",
+record:"3-1",
+level:63
+}
+
+],
+
+
+
+FEATHERWEIGHT: [
+
+{
+name:"Карим Халид",
+country:"Египет",
+style:"Универсал",
+record:"0-0",
+level:60
+},
+
+{
+name:"Бек Нурлан",
+country:"Казахстан",
+style:"Борьба",
+record:"2-1",
+level:62
+},
+
+{
+name:"Мигель Торрес",
+country:"Бразилия",
+style:"BJJ",
+record:"3-0",
+level:64
+}
+
+],
+
+
+
+LIGHTWEIGHT: [
+
+{
+name:"Али Рахман",
+country:"Азербайджан",
+style:"Бокс",
+record:"0-0",
+level:60
+},
+
+{
+name:"Рустам Хан",
+country:"Россия",
+style:"Самбо",
+record:"2-0",
+level:63
+},
+
+{
+name:"Диего Силва",
+country:"Бразилия",
+style:"BJJ",
+record:"4-1",
+level:65
+}
+
+],
+
+
+
+WELTERWEIGHT: [
+
+{
+name:"Омар Фарис",
+country:"ОАЭ",
+style:"Борьба",
+record:"0-0",
+level:60
+},
+
+{
+name:"Адам Уокер",
+country:"Англия",
+style:"Бокс",
+record:"3-1",
+level:64
+},
+
+{
+name:"Тимур Алиев",
+country:"Россия",
+style:"Самбо",
+record:"5-1",
+level:66
+}
+
+],
+
+
+
+MIDDLEWEIGHT: [
+
+{
+name:"Самир Хасан",
+country:"Египет",
+style:"Универсал",
+record:"0-0",
+level:60
+},
+
+{
+name:"Виктор Сантос",
+country:"Бразилия",
+style:"BJJ",
+record:"3-2",
+level:65
+},
+
+{
+name:"Рашид Карим",
+country:"Казахстан",
+style:"Борьба",
+record:"5-0",
+level:67
+}
+
+],
+
+
+
+LIGHT_HEAVYWEIGHT: [
+
+{
+name:"Дэвид Миллер",
+country:"США",
+style:"Бокс",
+record:"0-0",
+level:60
+},
+
+{
+name:"Магомед Исламов",
+country:"Россия",
+style:"Борьба",
+record:"4-1",
+level:66
+},
+
+{
+name:"Алекс Фернандес",
+country:"Испания",
+style:"Кикбоксинг",
+record:"6-2",
+level:68
+}
+
+],
+
+
+
+HEAVYWEIGHT: [
+
+{
+name:"Джек Миллер",
+country:"США",
+style:"Бокс",
+record:"0-0",
+level:60
+},
+
+{
+name:"Али Рахманов",
+country:"Азербайджан",
+style:"Борьба",
+record:"2-0",
+level:63
+},
+
+{
+name:"Макс Торрес",
+country:"Испания",
+style:"Кикбоксинг",
+record:"4-1",
+level:65
+},
+
+{
+name:"Дэвид Уилсон",
+country:"Англия",
+style:"Универсал",
+record:"3-1",
+level:64
+},
+
+{
+name:"Роман Ковалёв",
+country:"Россия",
+style:"Самбо",
+record:"5-2",
+level:67
+}
+
+]
 
 };
-
-
-const ACA = {
-
-};
-
-
-const PFL = {
-
-};
-
-
-const
-   UAE_WARRIORS: {
-
 FLYWEIGHT: {
 
 name: "Наилегчайший вес (до 57 кг)",
 
 champion: {
-    name: "Yousef Al-Hadi",
-    country: "🇦🇪 ОАЭ",
-    record: "17-2",
-    style: "Борьба",
-    level: 85
+name: "Анатолий Кондратьев",
+country: "🇷🇺 Россия",
+level: 85
 },
-
+const Aca=
 rankings: [
 
 {
 rank: 1,
-name: "Amir Rahman",
-country: "🇷🇺 Россия",
-record: "14-2",
-style: "Универсал",
+name: "Арен Акопян",
+country: "🇦🇲 Армения",
 level: 82
 },
 
 {
 rank: 2,
-name: "Leo Santos",
-country: "🇧🇷 Бразилия",
-record: "13-3",
-style: "BJJ",
-level: 80
+name: "Азамат Пшуков",
+country: "🇷🇺 Россия",
+level: 81
 },
 
 {
 rank: 3,
-name: "Bekzat Nur",
-country: "🇰🇿 Казахстан",
-record: "12-2",
-style: "Борьба",
-level: 79
+name: "Азим Гафоров",
+country: "🇹🇯 Таджикистан",
+level: 80
 },
 
 {
 rank: 4,
-name: "Ali Faris",
-country: "🇦🇪 ОАЭ",
-record: "11-3",
-style: "Бокс",
-level: 77
+name: "Азамат Керефов",
+country: "🇷🇺 Россия",
+level: 84
 },
 
 {
 rank: 5,
-name: "Kenji Sato",
-country: "🇯🇵 Япония",
-record: "10-2",
-style: "Кикбоксинг",
-level: 76
-}
-
-],
-
-rookies: [
-
-{
-name: "Новичок UAE 1",
-country: "🇦🇪 ОАЭ",
-record: "3-0",
-style: "Борьба",
-level: 60
-},
-
-{
-name: "Новичок UAE 2",
+name: "Имран Букуев",
 country: "🇷🇺 Россия",
-record: "2-1",
-style: "Бокс",
-level: 58
+level: 79
 },
 
 {
-name: "Новичок UAE 3",
-country: "🇰🇿 Казахстан",
-record: "4-1",
-style: "Самбо",
-level: 
+rank: 6,
+name: "Вартан Асатрян",
+country: "🇦🇲 Армения",
+level: 78
+},
 
+{
+rank: 7,
+name: "Сайгид Абдулаев",
+country: "🇷🇺 Россия",
+level: 77
+},
 
+{
+rank: 8,
+name: "Астемир Нагоев",
+country: "🇷🇺 Россия",
+level: 76
+},
 
+{
+rank: 9,
+name: "Умалат Исрапилов",
+country: "🇷🇺 Россия",
+level: 75
+},
+
+{
+rank: 10,
+name: "Оятулло Муминов",
+country: "🇹🇯 Таджикистан",
+level: 74
 }
- },
+
+]
+
+},
 BANTAMWEIGHT: {
 
 name: "Легчайший вес (до 61 кг)",
 
-champion: {
-    name: "Khalid Al-Masri",
-    country: "🇪🇬 Египет",
-    record: "18-3",
-    style: "Универсал",
-    level: 86
-},
-
 rankings: [
 
 {
 rank: 1,
-name: "Murad Karimov",
-country: "🇦🇿 Азербайджан",
-record: "15-2",
-style: "Борьба",
-level: 82
-},
-
-{
-rank: 2,
-name: "Ryo Tanaka",
-country: "🇯🇵 Япония",
-record: "14-3",
-style: "Кикбоксинг",
-level: 80
-},
-
-{
-rank: 3,
-name: "Carlos Mendes",
-country: "🇧🇷 Бразилия",
-record: "13-2",
-style: "BJJ",
-level: 79
-},
-
-{
-rank: 4,
-name: "Adam Walker",
-country: "🇬🇧 Англия",
-record: "12-3",
-style: "Бокс",
-level: 78
-},
-
-{
-rank: 5,
-name: "Bekzat Nur",
-country: "🇰🇿 Казахстан",
-record: "11-2",
-style: "Борьба",
-level: 77
-},
-
-{
-rank: 6,
-name: "Omar Faris",
-country: "🇦🇪 ОАЭ",
-record: "10-3",
-style: "Универсал",
-level: 76
-},
-
-{
-rank: 7,
-name: "Leo Santos",
-country: "🇧🇷 Бразилия",
-record: "10-4",
-style: "BJJ",
-level: 75
-},
-
-{
-rank: 8,
-name: "Ivan Markov",
+name: "Олег Борисов",
 country: "🇷🇺 Россия",
-record: "9-2",
-style: "Борьба",
-level: 74
-},
-
-{
-rank: 9,
-name: "Ken Wilson",
-country: "🇺🇸 США",
-record: "9-3",
-style: "Бокс",
-level: 73
-},
-
-{
-rank: 10,
-name: "Hiro Sato",
-country: "🇯🇵 Япония",
-record: "8-2",
-style: "Каратэ",
-level: 72
-}
-
-]
-
-},
-FEATHERWEIGHT: {
-
-name: "Полулёгкий вес (до 66 кг)",
-
-champion: {
-    name: "Yusuf Karim",
-    country: "🇹🇷 Турция",
-    record: "20-3",
-    style: "Универсал",
-    level: 87
-},
-
-rankings: [
-
-{
-rank: 1,
-name: "Ali Rahman",
-country: "🇦🇿 Азербайджан",
-record: "16-2",
-style: "Бокс",
-level: 82
-},
-
-{
-rank: 2,
-name: "Diego Silva",
-country: "🇧🇷 Бразилия",
-record: "15-3",
-style: "BJJ",
-level: 81
-},
-
-{
-rank: 3,
-name: "Rustam Karimov",
-country: "🇰🇿 Казахстан",
-record: "14-2",
-style: "Борьба",
-level: 80
-},
-
-{
-rank: 4,
-name: "Alex Johnson",
-country: "🇺🇸 США",
-record: "13-3",
-style: "Кикбоксинг",
-level: 79
-},
-
-{
-rank: 5,
-name: "Omar Hassan",
-country: "🇪🇬 Египет",
-record: "12-2",
-style: "Универсал",
-level: 78
-},
-
-{
-rank: 6,
-name: "Kenji Mori",
-country: "🇯🇵 Япония",
-record: "11-3",
-style: "Каратэ",
-level: 76
-},
-
-{
-rank: 7,
-name: "Ivan Petrov",
-country: "🇷🇺 Россия",
-record: "10-2",
-style: "Борьба",
-level: 75
-},
-
-{
-rank: 8,
-name: "Lucas Costa",
-country: "🇵🇹 Португалия",
-record: "10-4",
-style: "Бокс",
-level: 74
-},
-
-{
-rank: 9,
-name: "Sami Khalid",
-country: "🇦🇪 ОАЭ",
-record: "9-3",
-style: "Универсал",
-level: 73
-},
-
-{
-rank: 10,
-name: "Marco Diaz",
-country: "🇪🇸 Испания",
-record: "8-2",
-style: "BJJ",
-level: 72
-}
-
-]
-
-},
-     LIGHTWEIGHT: {
-
-name: "Лёгкий вес (до 70 кг)",
-
-champion: {
-    name: "Yusuf Al-Farsi",
-    country: "🇦🇪 ОАЭ",
-    record: "19-2",
-    style: "Универсал",
-    level: 86
-},
-
-rankings: [
-
-{
-rank: 1,
-name: "Abdul Karim",
-country: "🇦🇪 ОАЭ",
-record: "16-2",
-style: "Универсал",
-level: 82
-},
-
-{
-rank: 2,
-name: "Rashid Aliev",
-country: "🇷🇺 Россия",
-record: "14-3",
-style: "Борьба",
-level: 80
-},
-
-{
-rank: 3,
-name: "Murad Khan",
-country: "🇦🇿 Азербайджан",
-record: "13-2",
-style: "Бокс",
-level: 79
-},
-
-{
-rank: 4,
-name: "Omar Silva",
-country: "🇧🇷 Бразилия",
-record: "12-3",
-style: "BJJ",
-level: 78
-},
-
-{
-rank: 5,
-name: "Alex Carter",
-country: "🇺🇸 США",
-record: "15-4",
-style: "Кикбоксинг",
-level: 77
-},
-
-{
-rank: 6,
-name: "Yuki Tanaka",
-country: "🇯🇵 Япония",
-record: "11-2",
-style: "Универсал",
-level: 76
-},
-
-{
-rank: 7,
-name: "Bek Nur",
-country: "🇰🇿 Казахстан",
-record: "10-2",
-style: "Борьба",
-level: 75
-},
-
-{
-rank: 8,
-name: "Leo Martins",
-country: "🇵🇹 Португалия",
-record: "11-4",
-style: "Бокс",
-level: 74
-},
-
-{
-rank: 9,
-name: "Adam Walker",
-country: "🇬🇧 Англия",
-record: "10-3",
-style: "Кикбоксинг",
-level: 73
-},
-
-{
-rank: 10,
-name: "Sami Hassan",
-country: "🇪🇬 Египет",
-record: "9-2",
-style: "Борьба",
-level: 72
-}
-
-]
-
-},
-     WELTERWEIGHT: {
-
-name: "Полусредний вес (до 77 кг)",
-
-champion: {
-    name: "Kamal Ibrahim",
-    country: "🇲🇦 Марокко",
-    record: "21-3",
-    style: "Борьба",
-    level: 88
-},
-
-rankings: [
-
-{
-rank: 1,
-name: "Arman Bek",
-country: "🇰🇿 Казахстан",
-record: "17-2",
-style: "Универсал",
-level: 83
-},
-
-{
-rank: 2,
-name: "Diego Ramos",
-country: "🇧🇷 Бразилия",
-record: "16-3",
-style: "BJJ",
-level: 82
-},
-
-{
-rank: 3,
-name: "Ali Karimov",
-country: "🇦🇿 Азербайджан",
-record: "15-2",
-style: "Борьба",
-level: 81
-},
-
-{
-rank: 4,
-name: "Michael Carter",
-country: "🇺🇸 США",
-record: "14-3",
-style: "Бокс",
-level: 80
-},
-
-{
-rank: 5,
-name: "Yuki Sato",
-country: "🇯🇵 Япония",
-record: "13-2",
-style: "Кикбоксинг",
-level: 79
-},
-
-{
-rank: 6,
-name: "Rustam Aliyev",
-country: "🇷🇺 Россия",
-record: "12-3",
-style: "Самбо",
-level: 78
-},
-
-{
-rank: 7,
-name: "Omar Hassan",
-country: "🇪🇬 Египет",
-record: "11-2",
-style: "Универсал",
-level: 76
-},
-
-{
-rank: 8,
-name: "Lucas Silva",
-country: "🇵🇹 Португалия",
-record: "10-3",
-style: "Бокс",
-level: 75
-},
-
-{
-rank: 9,
-name: "Ken Wilson",
-country: "🇬🇧 Англия",
-record: "9-2",
-style: "Кикбоксинг",
-level: 74
-},
-
-{
-rank: 10,
-name: "Hiro Tanaka",
-country: "🇯🇵 Япония",
-record: "8-3",
-style: "BJJ",
-level: 73
-}
-
-]
-
-},
-  MIDDLEWEIGHT: {
-
-name: "Средний вес (до 84 кг)",
-
-champion: {
-    name: "Yasir Khan",
-    country: "🇵🇰 Пакистан",
-    record: "22-3",
-    style: "Универсал",
-    level: 89
-},
-
-rankings: [
-
-{
-rank: 1,
-name: "Murad Ali",
-country: "🇦🇿 Азербайджан",
-record: "18-2",
-style: "Борьба",
 level: 84
 },
 
 {
 rank: 2,
-name: "Carlos Mendes",
-country: "🇧🇷 Бразилия",
-record: "17-3",
-style: "BJJ",
-level: 83
-},
-
-{
-rank: 3,
-name: "Ivan Volkov",
+name: "Ренат Ондар",
 country: "🇷🇺 Россия",
-record: "16-2",
-style: "Самбо",
 level: 82
 },
 
 {
-rank: 4,
-name: "Adam Wilson",
-country: "🇺🇸 США",
-record: "15-4",
-style: "Бокс",
-level: 81
-},
-
-{
-rank: 5,
-name: "Bek Nur",
-country: "🇰🇿 Казахстан",
-record: "14-3",
-style: "Универсал",
+rank: 3,
+name: "Александр Подлесный",
+country: "🇷🇺 Россия",
 level: 80
 },
 
 {
-rank: 6,
-name: "Hiro Sato",
-country: "🇯🇵 Япония",
-record: "13-2",
-style: "Кикбоксинг",
+rank: 4,
+name: "Рустам Керимов",
+country: "🇷🇺 Россия",
+level: 87
+},
+
+{
+rank: 5,
+name: "Давид Джибилов",
+country: "🇷🇺 Россия",
 level: 79
 },
 
 {
-rank: 7,
-name: "Omar Faris",
-country: "🇦🇪 ОАЭ",
-record: "12-3",
-style: "Борьба",
-level: 78
-},
-
-{
-rank: 8,
-name: "Leo Costa",
-country: "🇵🇹 Португалия",
-record: "11-2",
-style: "Бокс",
-level: 77
-},
-
-{
-rank: 9,
-name: "Sami Hassan",
-country: "🇪🇬 Египет",
-record: "10-3",
-style: "BJJ",
-level: 76
-},
-
-{
-rank: 10,
-name: "Marco Silva",
-country: "🇪🇸 Испания",
-record: "9-2",
-style: "Универсал",
-level: 75
-}
-
-]
-
-},
-LIGHT_HEAVYWEIGHT: {
-
-name: "Полутяжёлый вес (до 93 кг)",
-
-champion: {
-    name: "Rashid Karim",
-    country: "🇷🇺 Россия",
-    record: "24-4",
-    style: "Борьба",
-    level: 90
-},
-
-rankings: [
-
-{
-rank: 1,
-name: "Amir Sultan",
-country: "🇰🇿 Казахстан",
-record: "19-3",
-style: "Самбо",
+rank: 6,
+name: "Тимур Валиев",
+country: "🇷🇺 Россия",
 level: 85
 },
 
 {
-rank: 2,
-name: "Victor Santos",
-country: "🇧🇷 Бразилия",
-record: "18-4",
-style: "BJJ",
-level: 84
-},
-
-{
-rank: 3,
-name: "Alex Morgan",
-country: "🇺🇸 США",
-record: "17-3",
-style: "Бокс",
+rank: 7,
+name: "Абдул-Рахман Дудаев",
+country: "🇷🇺 Россия",
 level: 83
 },
 
 {
-rank: 4,
-name: "Magomed Karimov",
-country: "🇦🇿 Азербайджан",
-record: "16-2",
-style: "Борьба",
-level: 82
-},
-
-{
-rank: 5,
-name: "Kenji Yamato",
-country: "🇯🇵 Япония",
-record: "15-3",
-style: "Кикбоксинг",
-level: 81
-},
-
-{
-rank: 6,
-name: "Omar Khalil",
-country: "🇦🇪 ОАЭ",
-record: "14-4",
-style: "Универсал",
-level: 80
-},
-
-{
-rank: 7,
-name: "Diego Costa",
-country: "🇵🇹 Португалия",
-record: "13-3",
-style: "Бокс",
-level: 79
-},
-
-{
 rank: 8,
-name: "Ivan Petrov",
-country: "🇧🇬 Болгария",
-record: "12-2",
-style: "Борьба",
+name: "Осимхон Рахмонов",
+country: "🇹🇯 Таджикистан",
 level: 78
 },
 
 {
 rank: 9,
-name: "Lucas Ferreira",
-country: "🇪🇸 Испания",
-record: "11-3",
-style: "BJJ",
+name: "Томаш Дэк",
+country: "🇸🇰 Словакия",
 level: 77
 },
 
 {
 rank: 10,
-name: "Hassan Ali",
-country: "🇪🇬 Египет",
-record: "10-2",
+name: "Павел Витрук",
+country: "🇷🇺 Россия",
+level: 76
+}
+
+]
+
+},
+
+FEATHERWEIGHT: {
+
+name: "Полулёгкий вес (до 66 кг)",
+
+rankings: [
+
+{
+rank: 1,
+name: "Алихан Сулейманов",
+country: "🇷🇺 Россия",
+level: 83
+},
+
+{
+rank: 2,
+name: "Курбан Тайгибов",
+country: "🇷🇺 Россия",
+level: 84
+},
+
+{
+rank: 3,
+name: "Махарбек Каргинов",
+country: "🇷🇺 Россия",
+level: 82
+},
+
+{
+rank: 4,
+name: "Алимардан Абдыкааров",
+country: "🇰🇬 Кыргызстан",
+level: 80
+},
+
+{
+rank: 5,
+name: "Сайфуллах Джабраилов",
+country: "🇷🇺 Россия",
+level: 79
+},
+
+{
+rank: 6,
+name: "Джамбулат Селимханов",
+country: "🇷🇺 Россия",
+level: 78
+},
+
+{
+rank: 7,
+name: "Александр Грозин",
+country: "🇷🇺 Россия",
+level: 81
+},
+
+{
+rank: 8,
+name: "Глеб Хабибуллин",
+country: "🇷🇺 Россия",
+level: 77
+},
+
+{
+rank: 9,
+name: "Роман Огульчанский",
+country: "🇷🇺 Россия",
+level: 76
+},
+
+{
+rank: 10,
+name: "Апти Бимарзаев",
+country: "🇷🇺 Россия",
+level: 75
+}
+
+]
+
+},
+// ===============================
+// ACA - ЛЁГКИЙ ВЕС 70 КГ
+// ===============================
+
+LIGHTWEIGHT: {
+
+name: "Лёгкий вес (до 70 кг)",
+
+rankings: [
+
+{
+rank: 1,
+name: "Али Багов",
+country: "🇷🇺 Россия",
+style: "Борьба / Грэпплинг",
+level: 90
+},
+
+{
+rank: 2,
+name: "Дауд Шайхаев",
+country: "🇷🇺 Россия",
+style: "Универсал",
+level: 86
+},
+
+{
+rank: 3,
+name: "Эдуард Вартанян",
+country: "🇷🇺 Россия",
+style: "Бокс / Борьба",
+level: 88
+},
+
+{
+rank: 4,
+name: "Ахмед Алиев",
+country: "🇷🇺 Россия",
+style: "Борьба",
+level: 84
+},
+
+{
+rank: 5,
+name: "Ислам Мамедов",
+country: "🇷🇺 Россия",
+style: "Борьба",
+level: 85
+},
+
+{
+rank: 6,
+name: "Абдул-Азиз Абдулвахабов",
+country: "🇷🇺 Россия",
+style: "Универсал",
+level: 87
+},
+
+{
+rank: 7,
+name: "Марат Балаев",
+country: "🇷🇺 Россия",
+style: "Борьба",
+level: 82
+},
+
+{
+rank: 8,
+name: "Владимир Пальченков",
+country: "🇷🇺 Россия",
+style: "Ударник",
+level: 80
+},
+
+{
+rank: 9,
+name: "Юсуф Раисов",
+country: "🇷🇺 Россия",
+style: "Универсал",
+level: 86
+},
+
+{
+rank: 10,
+name: "Александр Грозин",
+country: "🇷🇺 Россия",
+style: "Бокс",
+level: 79
+}
+
+]
+
+},
+
+
+// ===============================
+// ACA - ПОЛУСРЕДНИЙ ВЕС 77 КГ
+// ===============================
+
+WELTERWEIGHT: {
+
+name: "Полусредний вес (до 77 кг)",
+
+rankings: [
+
+{
+rank: 1,
+name: "Абубакар Вагаев",
+country: "🇷🇺 Россия",
+style: "Борьба",
+level: 90
+},
+
+{
+rank: 2,
+name: "Альберт Туменов",
+country: "🇷🇺 Россия",
+style: "Ударник",
+level: 89
+},
+
+{
+rank: 3,
+name: "Байсангур Вахитов",
+country: "🇷🇺 Россия",
+style: "Борьба",
+level: 84
+},
+
+{
+rank: 4,
+name: "Алексей Махно",
+country: "🇷🇺 Россия",
+style: "Универсал",
+level: 82
+},
+
+{
+rank: 5,
+name: "Устармагомед Гаджидаудов",
+country: "🇷🇺 Россия",
+style: "Борьба",
+level: 83
+},
+
+{
+rank: 6,
+name: "Эдуард Вартанян",
+country: "🇷🇺 Россия",
+style: "Универсал",
+level: 86
+},
+
+{
+rank: 7,
+name: "Мухаммад Коков",
+country: "🇷🇺 Россия",
+style: "Борьба",
+level: 81
+},
+
+{
+rank: 8,
+name: "Александр Шлеменко",
+country: "🇷🇺 Россия",
+style: "Ударник",
+level: 80
+},
+
+{
+rank: 9,
+name: "Владимир Филипов",
+country: "🇷🇺 Россия",
+style: "Универсал",
+level: 78
+},
+
+{
+rank: 10,
+name: "Магомедрасул Хасбулаев",
+country: "🇷🇺 Россия",
+style: "Борьба",
+level: 79
+}
+
+]
+
+},
+
+// ===============================
+// ACA - СРЕДНИЙ ВЕС 84 КГ
+// ===============================
+
+MIDDLEWEIGHT: {
+
+name: "Средний вес (до 84 кг)",
+
+rankings: [
+
+{
+rank: 1,
+name: "Магомед Исмаилов",
+country: "🇷🇺 Россия",
+style: "Борьба / Универсал",
+level: 88
+},
+
+{
+rank: 2,
+name: "Владимир Филипов",
+country: "🇷🇺 Россия",
+style: "Универсал",
+level: 82
+},
+
+{
+rank: 3,
+name: "Артур Гусейнов",
+country: "🇷🇺 Россия",
+style: "Борьба",
+level: 84
+},
+
+{
+rank: 4,
+name: "Александр Шлеменко",
+country: "🇷🇺 Россия",
+style: "Ударник",
+level: 87
+},
+
+{
+rank: 5,
+name: "Мурад Абдулаев",
+country: "🇷🇺 Россия",
+style: "Борьба",
+level: 81
+},
+
+{
+rank: 6,
+name: "Алексей Ефремов",
+country: "🇷🇺 Россия",
+style: "Универсал",
+level: 79
+},
+
+{
+rank: 7,
+name: "Дмитрий Арышев",
+country: "🇷🇺 Россия",
+style: "Бокс",
+level: 78
+},
+
+{
+rank: 8,
+name: "Иван Штырков",
+country: "🇷🇺 Россия",
+style: "Универсал",
+level: 83
+},
+
+{
+rank: 9,
+name: "Армен Гулян",
+country: "🇦🇲 Армения",
+style: "Борьба",
+level: 77
+},
+
+{
+rank: 10,
+name: "Магомедрасул Гасанов",
+country: "🇷🇺 Россия",
 style: "Универсал",
 level: 76
 }
@@ -753,9 +842,195 @@ level: 76
 ]
 
 },
-     
-  
 
-// Проверка загрузки
 
-console.log("База бойцов загружена");
+// ===============================
+// ACA - ПОЛУТЯЖЁЛЫЙ ВЕС 93 КГ
+// ===============================
+
+LIGHT_HEAVYWEIGHT: {
+
+name: "Полутяжёлый вес (до 93 кг)",
+
+rankings: [
+
+{
+rank: 1,
+name: "Иван Штырков",
+country: "🇷🇺 Россия",
+style: "Универсал",
+level: 87
+},
+
+{
+rank: 2,
+name: "Саламу Абдурахманов",
+country: "🇷🇺 Россия",
+style: "Борьба",
+level: 83
+},
+
+{
+rank: 3,
+name: "Артур Гусейнов",
+country: "🇷🇺 Россия",
+style: "Борьба",
+level: 82
+},
+
+{
+rank: 4,
+name: "Магомед Анкалаев",
+country: "🇷🇺 Россия",
+style: "Ударник",
+level: 90
+},
+
+{
+rank: 5,
+name: "Мурад Мачаев",
+country: "🇷🇺 Россия",
+style: "Универсал",
+level: 80
+},
+
+{
+rank: 6,
+name: "Виктор Немков",
+country: "🇷🇺 Россия",
+style: "Борьба",
+level: 85
+},
+
+{
+rank: 7,
+name: "Артём Фролов",
+country: "🇷🇺 Россия",
+style: "Универсал",
+level: 79
+},
+
+{
+rank: 8,
+name: "Алексей Буторин",
+country: "🇷🇺 Россия",
+style: "Бокс",
+level: 78
+},
+
+{
+rank: 9,
+name: "Роман Копылов",
+country: "🇷🇺 Россия",
+style: "Ударник",
+level: 81
+},
+
+{
+rank: 10,
+name: "Владимир Минеев",
+country: "🇷🇺 Россия",
+style: "Кикбоксинг",
+level: 86
+}
+
+]
+
+},
+// ===============================
+// ACA - ТЯЖЁЛЫЙ ВЕС 120 КГ
+// ===============================
+
+HEAVYWEIGHT: {
+
+name: "Тяжёлый вес (до 120 кг)",
+
+rankings: [
+
+{
+rank: 1,
+name: "Евгений Гончаров",
+country: "🇷🇺 Россия",
+style: "Борьба / Универсал",
+level: 88
+},
+
+{
+rank: 2,
+name: "Мухумат Вахаев",
+country: "🇷🇺 Россия",
+style: "Борьба",
+level: 87
+},
+
+{
+rank: 3,
+name: "Тони Джонсон",
+country: "🇺🇸 США",
+style: "Бокс / Борьба",
+level: 86
+},
+
+{
+rank: 4,
+name: "Адам Богатырёв",
+country: "🇷🇺 Россия",
+style: "Борьба",
+level: 84
+},
+
+{
+rank: 5,
+name: "Денис Гольцов",
+country: "🇷🇺 Россия",
+style: "Самбо",
+level: 89
+},
+
+{
+rank: 6,
+name: "Кирилл Корнилов",
+country: "🇷🇺 Россия",
+style: "Универсал",
+level: 82
+},
+
+{
+rank: 7,
+name: "Антон Вязигин",
+country: "🇷🇺 Россия",
+style: "Борьба",
+level: 81
+},
+
+{
+rank: 8,
+name: "Александр Маслов",
+country: "🇷🇺 Россия",
+style: "Ударник",
+level: 79
+},
+
+{
+rank: 9,
+name: "Сергей Билостенный",
+country: "🇷🇺 Россия",
+style: "Ударник",
+level: 83
+},
+
+{
+rank: 10,
+name: "Александр Романов",
+country: "🇲🇩 Молдова",
+style: "Борьба",
+level: 85
+}
+
+]
+
+},
+
+
+
+
